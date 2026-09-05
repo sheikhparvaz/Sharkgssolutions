@@ -1,30 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Explicitly configure console logging
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
-// Add services to the container.
+// Only add controllers for now, or even remove this initially
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
-
-// app.UseHttpsRedirection(); // <--- COMMENT THIS LINE OUT
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+// Start with just a simple route to ensure the app can even run
+// This will bypass most middleware
+app.MapGet("/", () => "Hello from Vercel ASP.NET Core!");
 
 app.Run();
