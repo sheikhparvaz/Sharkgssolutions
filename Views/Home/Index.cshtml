@@ -1,0 +1,342 @@
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="container hero-inner">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+                <div class="reveal-up">
+                    <span class="eyebrow"><i class="bi bi-stars"></i> Innovative Intelligence</span>
+                    <h1 class="hero-title">
+                        We Engineer <span class="text-gradient typed-target" id="typedText"></span><br />
+                        for Ambitious Businesses
+                    </h1>
+                    <p class="hero-lead">
+                        Shark GS Solutions is a leading technology partner transforming the digital
+                        landscape — from custom software and cloud to AI/ML and cybersecurity —
+                        so your business stays competitive in an increasingly digital world.
+                    </p>
+                    <div class="hero-cta d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-glow btn-lg">Start a Project <i class="bi bi-arrow-up-right"></i></a>
+                        <a href="#services" class="btn btn-outline-light btn-lg btn-ghost">Explore Services</a>
+                    </div>
+                </div>
+
+                <div class="hero-stats reveal-up" data-delay="150">
+                    @foreach (var stat in Model.Stats)
+                    {
+                        <div class="stat-box">
+                            <i class="bi @stat.Icon"></i>
+                            <div>
+                                <span class="counter" data-target="@stat.Value">0</span><span class="counter-suffix">@stat.Suffix</span>
+                                <p>@stat.Label</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-media reveal-up" data-delay="250">
+                    <div class="hero-media-glow"></div>
+                    <img src="~/images/hero-team.jpg" alt="Shark GS Solutions engineering team collaborating" class="hero-image tilt-card" />
+                    <div class="floating-card card-topleft">
+                        <i class="bi bi-cloud-check"></i>
+                        <span>Cloud-Native Delivery</span>
+                    </div>
+                    <div class="floating-card card-bottomright">
+                        <i class="bi bi-shield-check"></i>
+                        <span>Enterprise-Grade Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll down"><i class="bi bi-mouse2"></i></a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about-section" id="about">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-5">
+                <div class="reveal-left">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">Your Partner in Digital Transformation</h2>
+                    <p class="section-lead">
+                        We leverage extensive expertise in software development to deliver tailored
+                        solutions that address the unique challenges faced by our clients — empowering
+                        organizations to enhance operational efficiency and drive growth.
+                    </p>
+                    <ul class="check-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Cutting-edge technology integration</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Client-first collaborative delivery</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Continuous evolution &amp; improvement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="about-grid">
+                    <div class="about-card reveal-up" data-delay="0">
+                        <i class="bi bi-code-slash"></i>
+                        <h5>Software Development</h5>
+                        <p>Crafting custom applications that meet specific business needs.</p>
+                    </div>
+                    <div class="about-card reveal-up" data-delay="80">
+                        <i class="bi bi-cloud-arrow-up"></i>
+                        <h5>Cloud Computing</h5>
+                        <p>Seamless migration and optimized, scalable cloud solutions.</p>
+                    </div>
+                    <div class="about-card reveal-up" data-delay="160">
+                        <i class="bi bi-shield-lock"></i>
+                        <h5>Cybersecurity</h5>
+                        <p>Protecting sensitive data with robust security measures.</p>
+                    </div>
+                    <div class="about-card reveal-up" data-delay="240">
+                        <i class="bi bi-diagram-3"></i>
+                        <h5>DevOps</h5>
+                        <p>Enhancing collaboration and efficiency in software delivery.</p>
+                    </div>
+                    <div class="about-card reveal-up wide" data-delay="320">
+                        <i class="bi bi-cpu"></i>
+                        <h5>AI / ML Solutions</h5>
+                        <p>Employing data-driven insights to automate and innovate processes across your organization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ AI / ML FEATURE STRIP ============ -->
+<section class="section ai-strip">
+    <div class="container">
+        <div class="row align-items-center gy-4">
+            <div class="col-lg-6 reveal-left">
+                <img src="~/images/ai-collage.jpg" alt="AI and machine learning visual collage" class="ai-collage-image tilt-card" />
+            </div>
+            <div class="col-lg-6 reveal-right">
+                <span class="section-tag">Artificial Intelligence</span>
+                <h2 class="section-title">Data-Driven Insight, Automated at Scale</h2>
+                <p class="section-lead">
+                    From custom model development to NLP, computer vision, and AI-powered
+                    automation, we help you unlock decisions hiding in your data.
+                </p>
+                <div class="progress-stack">
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Model Development</span><span>95%</span></div>
+                        <div class="progress-track"><div class="progress-fill" data-width="95"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Natural Language Processing</span><span>90%</span></div>
+                        <div class="progress-track"><div class="progress-fill" data-width="90"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>Computer Vision</span><span>88%</span></div>
+                        <div class="progress-track"><div class="progress-fill" data-width="88"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>AI-Powered Automation</span><span>93%</span></div>
+                        <div class="progress-track"><div class="progress-fill" data-width="93"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services-section" id="services">
+    <div class="container">
+        <div class="text-center reveal-up">
+            <span class="section-tag center">What We Do</span>
+            <h2 class="section-title">A Full Spectrum of Technology Services</h2>
+            <p class="section-lead mx-auto" style="max-width:720px;">
+                Twenty-plus specialized service lines, one accountable partner — pick a single
+                engagement or build a full digital transformation program.
+            </p>
+        </div>
+
+        <div class="service-filter reveal-up" data-delay="100">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="build">Build</button>
+            <button class="filter-chip" data-filter="secure">Secure &amp; Operate</button>
+            <button class="filter-chip" data-filter="grow">Grow &amp; Scale</button>
+        </div>
+
+        <div class="row g-4 services-grid">
+            @{
+                var buildSlugs = new HashSet<string> { "software-development", "ui-ux", "ecommerce", "blockchain", "iot", "ar-vr", "enterprise-software" };
+                var secureSlugs = new HashSet<string> { "cloud-computing", "devops", "cybersecurity", "qa-testing", "maintenance-support" };
+            }
+            @for (int i = 0; i < Model.Services.Count; i++)
+            {
+                var svc = Model.Services[i];
+                var bucket = buildSlugs.Contains(svc.Slug) ? "build" : (secureSlugs.Contains(svc.Slug) ? "secure" : "grow");
+                <div class="col-lg-4 col-md-6 service-col" data-category="@bucket">
+                    <div class="service-card reveal-up" data-delay="@((i % 3) * 90)">
+                        <div class="service-icon"><i class="bi @svc.Icon"></i></div>
+                        <h5>@svc.Title</h5>
+                        <p>@svc.Summary</p>
+                        <ul class="service-tags">
+                            @foreach (var h in svc.Highlights)
+                            {
+                                <li>@h</li>
+                            }
+                        </ul>
+                        <span class="card-shine"></span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="section industries-section" id="industries">
+    <div class="container">
+        <div class="text-center reveal-up">
+            <span class="section-tag center">Industry Focus</span>
+            <h2 class="section-title">Solutions Tailored to Your Sector</h2>
+        </div>
+        <div class="row g-4">
+            @for (int i = 0; i < Model.Industries.Count; i++)
+            {
+                var ind = Model.Industries[i];
+                <div class="col-lg-3 col-md-6">
+                    <div class="industry-card reveal-up" data-delay="@(i * 100)">
+                        <div class="industry-icon"><i class="bi @ind.Icon"></i></div>
+                        <h5>@ind.Name</h5>
+                        <p>@ind.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section why-us-section" id="why-us">
+    <div class="hero-bg-grid inverse"></div>
+    <div class="container position-relative">
+        <div class="text-center reveal-up">
+            <span class="section-tag center light">Why Choose Us</span>
+            <h2 class="section-title light">A Partner Invested in Your Growth</h2>
+        </div>
+        <div class="row g-4">
+            @for (int i = 0; i < Model.WhyChooseUs.Count; i++)
+            {
+                var w = Model.WhyChooseUs[i];
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-card reveal-up" data-delay="@(i * 100)">
+                        <div class="why-number">0@(i + 1)</div>
+                        <i class="bi @w.Icon"></i>
+                        <h5>@w.Title</h5>
+                        <p>@w.Summary</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact-section" id="contact">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5 reveal-left">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Innovate Together</h2>
+                <p class="section-lead">
+                    Tell us about your project and a solutions expert from Shark GS Solutions
+                    will reach out within one business day.
+                </p>
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <div>
+                            <h6>Address</h6>
+                            <p>Shark GS Solutions Pvt. Ltd.<br />192231 Ponipora, Kulgam, JK, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <div>
+                            <h6>Phone</h6>
+                            <p><a href="tel:+917006442865">+91 7006442865</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <div>
+                            <h6>Email</h6>
+                            <p><a href="mailto:itmanager@sgss.site">itmanager@sgss.site</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="bi bi-globe"></i>
+                        <div>
+                            <h6>Website</h6>
+                            <p><a href="https://www.sgss.site" target="_blank" rel="noopener">www.sgss.site</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 reveal-right">
+                <form id="contactForm" class="contact-form" novalidate>
+                    @Html.AntiForgeryToken()
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label" for="Name">Full Name</label>
+                            <input class="form-control" type="text" id="Name" name="Name" placeholder="Jane Doe" required />
+                            <div class="field-error" data-for="Name"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="Email">Email Address</label>
+                            <input class="form-control" type="email" id="Email" name="Email" placeholder="jane@company.com" required />
+                            <div class="field-error" data-for="Email"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="Phone">Phone Number</label>
+                            <input class="form-control" type="tel" id="Phone" name="Phone" placeholder="+1 555 000 0000" />
+                            <div class="field-error" data-for="Phone"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="Company">Company</label>
+                            <input class="form-control" type="text" id="Company" name="Company" placeholder="Acme Inc." />
+                            <div class="field-error" data-for="Company"></div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="ServiceInterest">Service of Interest</label>
+                            <select class="form-select" id="ServiceInterest" name="ServiceInterest" required>
+                                <option value="" selected disabled>Choose a service&hellip;</option>
+                                @foreach (var svc in Model.Services)
+                                {
+                                    <option value="@svc.Title">@svc.Title</option>
+                                }
+                                <option value="Something Else">Something Else</option>
+                            </select>
+                            <div class="field-error" data-for="ServiceInterest"></div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="Message">Your Message</label>
+                            <textarea class="form-control" id="Message" name="Message" rows="4" placeholder="Tell us a bit about your project or challenge&hellip;" required></textarea>
+                            <div class="field-error" data-for="Message"></div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-glow btn-lg w-100" id="contactSubmit">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-spinner d-none"><span class="spinner-border spinner-border-sm"></span> Sending&hellip;</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

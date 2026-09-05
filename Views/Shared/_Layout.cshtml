@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Shark GS Solutions | Innovative Intelligence</title>
+    <meta name="description" content="Shark GS Solutions is a leading technology partner delivering software development, cloud, AI/ML, cybersecurity, DevOps and 20+ digital transformation services." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-shark">
+            <svg viewBox="0 0 100 60" class="loader-svg">
+                <path d="M5,35 Q25,10 50,20 Q75,10 95,30 Q80,35 65,32 Q60,45 50,45 Q45,35 35,35 Q20,42 5,35 Z" />
+            </svg>
+            <span>SHARK GS SOLUTIONS</span>
+        </div>
+    </div>
+
+    <!-- Cursor glow (desktop only, handled in JS) -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#top">
+                <span class="brand-mark">S</span>
+                <span class="brand-text text-white">Shark <em>GS</em> Solutions</span>
+            </a>
+            <button class="navbar-toggler" type="button" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link nav-anchor" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link nav-anchor" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link nav-anchor" href="#industries">Industries</a></li>
+                    <li class="nav-item"><a class="nav-link nav-anchor" href="#why-us">Why Us</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-glow ms-lg-3" href="#contact">Let's Talk <i class="bi bi-arrow-up-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="top"></div>
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-glow"></div>
+        <div class="container position-relative">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-3 d-inline-block" href="#top">
+                        <span class="brand-mark">S</span>
+                        <span class="brand-text">Shark <em>GS</em> Solutions</span>
+                    </a>
+                    <p class="text-muted-light">Innovative Intelligence — transforming the digital landscape for businesses across every sector.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Top Services</h6>
+                    <ul class="footer-links">
+                        <li><a href="#services">Software Development</a></li>
+                        <li><a href="#services">Cloud Computing</a></li>
+                        <li><a href="#services">AI &amp; Machine Learning</a></li>
+                        <li><a href="#services">Cybersecurity</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-heading">Get in Touch</h6>
+                    <ul class="footer-links">
+                        <li><i class="bi bi-geo-alt"></i> 192231 Ponipora, Kulgam, JK, India</li>
+                        <li><i class="bi bi-telephone"></i> <a href="tel:+917006442865">+91 7006442865</a></li>
+                        <li><i class="bi bi-envelope"></i> <a href="mailto:itmanager@sgss.site">itmanager@sgss.site</a></li>
+                        <li><i class="bi bi-globe"></i> <a href="https://www.sgss.site" target="_blank" rel="noopener">www.sgss.site</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider" />
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 pb-4">
+                <small class="text-muted-light">&copy; @DateTime.Now.Year Shark GS Solutions Pvt. Ltd. All rights reserved.</small>
+                <small class="text-muted-light">Built with <i class="bi bi-heart-fill text-danger"></i> on ASP.NET MVC</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+    <!-- Toast for contact form feedback -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 2000;">
+        <div id="feedbackToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="feedbackToastBody">Message sent!</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
